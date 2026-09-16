@@ -3,494 +3,284 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RED 10 La Maná — Convocatoria de negocios fundadores</title>
-<meta name="description" content="Diez negocios de La Maná se promocionan juntos y comparten clientes. Convocatoria abierta para cupos fundadores.">
+<title>RED 10 La Maná — Directorio de negocios afiliados</title>
+<meta name="description" content="Directorio de diez negocios de La Maná. Postula tu negocio: si cumple los requisitos, ingresa directo a la red.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --papel:#F6F5F2;
-  --papel-2:#EFEDE7;
-  --tinta:#14191A;
-  --tinta-2:#5C6360;
-  --tinta-3:#8D928E;
-  --verde:#0E3B33;
-  --verde-claro:#17564B;
-  --laton:#B07D35;
-  --linea:rgba(20,25,26,.14);
-  --linea-fuerte:rgba(20,25,26,.30);
-  --sobre:#FFFFFF;
+  --papel:#F6F5F2; --papel-2:#EFEDE7; --tinta:#14191A; --tinta-2:#5C6360; --tinta-3:#8D928E;
+  --verde:#0E3B33; --verde-claro:#17564B; --laton:#B07D35; --rojo:#A3402E;
+  --linea:rgba(20,25,26,.14); --linea-fuerte:rgba(20,25,26,.30); --sobre:#FFFFFF;
   --sombra:0 1px 2px rgba(20,25,26,.04), 0 8px 24px -12px rgba(20,25,26,.12);
 }
-:root:not([data-theme="light"]){
-  @media (prefers-color-scheme: dark){
-    --papel:#0E1110;
-    --papel-2:#141817;
-    --tinta:#EDEBE4;
-    --tinta-2:#9FA6A2;
-    --tinta-3:#767C79;
-    --verde:#0B302A;
-    --verde-claro:#17564B;
-    --laton:#D2A05A;
-    --linea:rgba(237,235,228,.14);
-    --linea-fuerte:rgba(237,235,228,.28);
-    --sobre:#171B1A;
-    --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
-  }
-}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --papel:#0E1110; --papel-2:#141817; --tinta:#EDEBE4; --tinta-2:#9FA6A2; --tinta-3:#767C79;
+  --verde:#0B302A; --verde-claro:#17564B; --laton:#D2A05A; --rojo:#D2705C;
+  --linea:rgba(237,235,228,.14); --linea-fuerte:rgba(237,235,228,.28); --sobre:#171B1A;
+  --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+}}
 :root[data-theme="dark"]{
   --papel:#0E1110; --papel-2:#141817; --tinta:#EDEBE4; --tinta-2:#9FA6A2; --tinta-3:#767C79;
-  --verde:#0B302A; --verde-claro:#17564B; --laton:#D2A05A;
+  --verde:#0B302A; --verde-claro:#17564B; --laton:#D2A05A; --rojo:#D2705C;
   --linea:rgba(237,235,228,.14); --linea-fuerte:rgba(237,235,228,.28); --sobre:#171B1A;
   --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
-
-body{
-  margin:0;background:var(--papel);color:var(--tinta);
-  font-family:"Archivo",-apple-system,"Segoe UI",sans-serif;
-  font-size:16.5px;line-height:1.65;font-weight:400;
-  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-}
-h1,h2,h3{
-  font-family:"Instrument Serif",Georgia,serif;font-weight:400;
-  letter-spacing:-.018em;line-height:1.06;margin:0;text-wrap:balance;
-}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:"Archivo",-apple-system,"Segoe UI",sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.018em;line-height:1.08;margin:0}
 p{margin:0 0 1.1em}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--laton);outline-offset:4px}
-
+a{color:inherit}
+:focus-visible{outline:2px solid var(--laton);outline-offset:3px}
 .env{max-width:1140px;margin:0 auto;padding:0 32px}
 @media (max-width:640px){.env{padding:0 20px}}
+.rotulo{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--laton);display:block;margin-bottom:14px}
+.oculto{display:none!important}
 
-.rotulo{
-  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--laton);margin:0 0 20px;display:block;
-}
-.rotulo .sep{color:var(--tinta-3);margin:0 8px}
+.cabecera{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--papel) 92%,transparent);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--linea)}
+.cabecera .env{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sello{width:32px;height:32px;border:1px solid var(--linea-fuerte);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Instrument Serif",serif;font-size:15px;color:var(--laton);flex:none}
+.marca-txt strong{font-family:"Instrument Serif",serif;font-size:18px;display:block;line-height:1.1}
+.marca-txt span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta-3)}
+.nav-links{display:flex;gap:26px;font-size:14px;color:var(--tinta-2)}
+.nav-links button{background:none;border:0;font:inherit;color:inherit;cursor:pointer;padding:0}
+.nav-links a:hover,.nav-links button:hover{color:var(--tinta)}
+@media (max-width:820px){.nav-links{display:none}}
 
-/* ── encabezado ── */
-.cabecera{
-  position:sticky;top:0;z-index:20;
-  background:color-mix(in srgb,var(--papel) 92%,transparent);
-  backdrop-filter:saturate(180%) blur(12px);
-  border-bottom:1px solid var(--linea);
-}
-.cabecera .env{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
-.marca{display:flex;align-items:center;gap:11px}
-.sello{
-  width:34px;height:34px;border:1px solid var(--linea-fuerte);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:"Instrument Serif",serif;font-size:16px;color:var(--laton);
-}
-.marca-txt{line-height:1.15}
-.marca-txt strong{font-family:"Instrument Serif",serif;font-weight:400;font-size:19px;letter-spacing:.01em;display:block}
-.marca-txt span{font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--tinta-3);font-weight:500}
-.nav-links{display:flex;gap:30px;font-size:14px;color:var(--tinta-2)}
-.nav-links a:hover{color:var(--tinta)}
-@media (max-width:900px){.nav-links{display:none}}
-
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  font-size:14.5px;font-weight:600;letter-spacing:.005em;
-  padding:12px 22px;border-radius:2px;border:1px solid transparent;
-  background:var(--verde);color:#F6F5F2;cursor:pointer;
-  transition:background .18s ease,transform .18s ease,color .18s ease;
-}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14.5px;font-weight:600;padding:11px 20px;border-radius:2px;border:1px solid transparent;background:var(--verde);color:#F6F5F2;cursor:pointer;transition:background .15s ease}
 .btn:hover{background:var(--verde-claro)}
-.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
 .btn-linea{background:transparent;color:var(--tinta);border-color:var(--linea-fuerte)}
-.btn-linea:hover{background:transparent;border-color:var(--tinta);color:var(--tinta)}
+.btn-linea:hover{background:transparent;border-color:var(--tinta)}
 .btn-laton{background:var(--laton);color:#14191A}
 .btn-laton:hover{background:#9A6C2C;color:#F6F5F2}
-.cabecera .btn{padding:10px 18px;font-size:13.5px}
+.btn-chico{padding:7px 13px;font-size:13px}
 
-/* ── portada ── */
-.portada{border-bottom:1px solid var(--linea);position:relative;overflow:hidden}
-.portada .env{
-  display:grid;grid-template-columns:1.08fr .92fr;gap:76px;
-  padding-top:92px;padding-bottom:84px;align-items:start;
-}
-.portada h1{font-size:clamp(46px,5.6vw,78px);max-width:13ch}
+.vista{display:none}
+.vista.activa{display:block}
+
+.portada{border-bottom:1px solid var(--linea)}
+.portada .env{padding-top:76px;padding-bottom:64px;max-width:760px}
+.portada h1{font-size:clamp(38px,5.4vw,58px)}
 .portada h1 em{font-style:italic;color:var(--laton)}
-.entrada{font-size:19px;line-height:1.6;color:var(--tinta-2);max-width:44ch;margin-top:26px}
-.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.pie-portada{
-  margin-top:38px;padding-top:20px;border-top:1px solid var(--linea);
-  font-size:13.5px;color:var(--tinta-3);max-width:46ch;
-}
+.entrada{font-size:18px;color:var(--tinta-2);margin-top:22px;max-width:56ch}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
-/* ── padrón de cupos ── */
-.padron{background:var(--sobre);border:1px solid var(--linea);border-radius:3px;box-shadow:var(--sombra)}
-.padron-cab{padding:20px 24px 16px;border-bottom:1px solid var(--linea)}
-.padron-cab .rotulo{margin-bottom:8px}
-.padron-cab h3{font-size:22px}
-.padron-cab p{margin:6px 0 0;font-size:13.5px;color:var(--tinta-3)}
-.fila{
-  width:100%;display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:14px;
-  padding:13px 24px;border:0;border-bottom:1px solid var(--linea);
-  background:transparent;color:inherit;text-align:left;font-family:inherit;font-size:15px;
-  cursor:pointer;transition:background .16s ease;
-}
-.fila:last-child{border-bottom:0}
-.fila .idx{font-family:"Instrument Serif",serif;font-size:15px;color:var(--tinta-3)}
-.fila .nom{font-weight:500}
-.fila .sub{display:block;font-size:12.5px;color:var(--tinta-3);font-weight:400;margin-top:1px}
-.estado{
-  font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  padding:4px 10px;border-radius:2px;white-space:nowrap;
-}
-.estado.ocupado{background:var(--verde);color:#F6F5F2}
-.estado.libre{border:1px solid var(--linea-fuerte);color:var(--tinta-3)}
-.fila.disp:hover{background:var(--papel-2)}
-.fila.disp:hover .estado.libre{border-color:var(--laton);color:var(--laton)}
-.fila.ocup{cursor:default}
-
-/* ── cifras ── */
 .cifras{background:var(--papel-2);border-bottom:1px solid var(--linea)}
-.cifras .env{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;padding:0}
-.cifra{padding:44px 32px;position:relative}
-.cifra + .cifra::before{content:"";position:absolute;left:0;top:32px;bottom:32px;width:1px;background:var(--linea)}
-.cifra .n{font-family:"Instrument Serif",serif;font-size:50px;line-height:1;color:var(--laton);display:block}
-.cifra p{margin:12px 0 0;font-size:14.5px;color:var(--tinta-2);max-width:26ch}
-@media (max-width:760px){
-  .cifras .env{grid-template-columns:1fr}
-  .cifra{padding:30px 20px;border-bottom:1px solid var(--linea)}
-  .cifra + .cifra::before{display:none}
-}
+.cifras .env{display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
+.cifra{padding:34px 32px;position:relative}
+.cifra+.cifra::before{content:"";position:absolute;left:0;top:26px;bottom:26px;width:1px;background:var(--linea)}
+.cifra .n{font-family:"Instrument Serif",serif;font-size:40px;color:var(--laton);display:block}
+.cifra p{margin:8px 0 0;font-size:14px;color:var(--tinta-2)}
+@media (max-width:760px){.cifras .env{grid-template-columns:1fr}.cifra{padding:22px 20px;border-bottom:1px solid var(--linea)}.cifra+.cifra::before{display:none}}
 
-/* ── secciones ── */
 section{border-bottom:1px solid var(--linea)}
-section > .env{padding-top:92px;padding-bottom:92px}
-@media (max-width:760px){section > .env{padding-top:60px;padding-bottom:60px}}
-.cabeza{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:56px}
-.cabeza h2{font-size:clamp(32px,3.9vw,50px);max-width:17ch}
-.cabeza .bajada{font-size:17px;color:var(--tinta-2);margin:0;max-width:50ch}
-@media (max-width:860px){.cabeza{grid-template-columns:1fr;gap:22px;margin-bottom:40px}}
+section>.env{padding-top:64px;padding-bottom:64px}
+.cabeza{max-width:640px;margin-bottom:36px}
+.cabeza h2{font-size:clamp(28px,3.4vw,38px)}
+.cabeza p{color:var(--tinta-2);font-size:16px;margin-top:12px}
 
-.beneficios{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--linea)}
-.ben{padding:36px 40px 38px 0;border-bottom:1px solid var(--linea)}
-.ben:nth-child(2n){padding-left:40px;border-left:1px solid var(--linea)}
-.ben:nth-last-child(-n+2){border-bottom:0}
-.ben .num{font-size:11px;font-weight:600;letter-spacing:.16em;color:var(--laton);display:block;margin-bottom:14px}
-.ben h3{font-size:23px;margin-bottom:12px}
-.ben p{margin:0;font-size:15.5px;color:var(--tinta-2)}
-@media (max-width:760px){
-  .beneficios{grid-template-columns:1fr}
-  .ben,.ben:nth-child(2n){padding:28px 0;border-left:0;border-bottom:1px solid var(--linea)}
-  .ben:nth-last-child(-n+2){border-bottom:1px solid var(--linea)}
-  .ben:last-child{border-bottom:0}
-}
+.directorio-lista{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--linea);border-radius:3px;overflow:hidden}
+.ficha-negocio{padding:26px 28px;border-bottom:1px solid var(--linea)}
+.ficha-negocio:nth-child(odd){border-right:1px solid var(--linea)}
+.ficha-negocio .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.ficha-negocio h3{font-size:21px}
+.ficha-negocio .rubro-tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--laton);white-space:nowrap}
+.ficha-negocio .datos{font-size:13.5px;color:var(--tinta-3);margin:6px 0 12px}
+.ficha-negocio .desc{font-size:15px;color:var(--tinta-2);margin-bottom:14px}
+.servicios-mini{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
+.servicios-mini li{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--linea);font-size:14px}
+.servicios-mini li:last-child{border-bottom:0}
+.servicios-mini .precio{color:var(--laton);font-weight:600;white-space:nowrap}
+.sin-servicios{font-size:13.5px;color:var(--tinta-3);font-style:italic;padding-top:8px}
+.vacio-directorio{padding:40px;text-align:center;color:var(--tinta-3);font-size:15px;grid-column:1/-1}
+@media (max-width:760px){.directorio-lista{grid-template-columns:1fr}.ficha-negocio:nth-child(odd){border-right:0}}
 
-/* ── proceso ── */
-.oscura{background:var(--verde);color:#EFEDE7;border-bottom:0}
-.oscura h2,.oscura h3{color:#F6F5F2}
-.oscura .bajada,.oscura p{color:rgba(239,237,231,.72)}
-.oscura .rotulo{color:var(--laton)}
-.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;border-top:1px solid rgba(239,237,231,.2);padding-top:40px}
-.paso .num{
-  font-family:"Instrument Serif",serif;font-size:14px;color:var(--laton);
-  display:inline-block;padding-bottom:14px;letter-spacing:.1em;
-}
-.paso h3{font-size:22px;margin-bottom:12px}
-.paso p{font-size:15px;margin:0}
-@media (max-width:760px){.pasos{grid-template-columns:1fr;gap:30px}}
-
-/* ── acuerdo ── */
 .acuerdo{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--linea);border-radius:3px;background:var(--sobre)}
-.col{padding:38px 40px}
+.col{padding:30px 32px}
 .col:first-child{border-right:1px solid var(--linea)}
-.col > .rotulo{margin-bottom:10px}
-.col h3{font-size:25px;margin-bottom:24px}
+.col h3{font-size:21px;margin-bottom:18px}
 .lista{list-style:none;margin:0;padding:0}
-.lista li{
-  position:relative;padding:14px 0 14px 26px;border-top:1px solid var(--linea);
-  font-size:15.5px;color:var(--tinta-2);
-}
-.lista li::before{
-  content:"";position:absolute;left:0;top:23px;width:9px;height:1px;background:var(--laton);
-}
+.lista li{position:relative;padding:12px 0 12px 22px;border-top:1px solid var(--linea);font-size:15px;color:var(--tinta-2)}
+.lista li::before{content:"";position:absolute;left:0;top:20px;width:8px;height:1px;background:var(--laton)}
 .lista li strong{color:var(--tinta);font-weight:600}
-@media (max-width:760px){
-  .acuerdo{grid-template-columns:1fr}
-  .col{padding:28px 22px}
-  .col:first-child{border-right:0;border-bottom:1px solid var(--linea)}
-}
+@media (max-width:760px){.acuerdo{grid-template-columns:1fr}.col:first-child{border-right:0;border-bottom:1px solid var(--linea)}}
 
-/* ── preguntas ── */
-.faq{border-top:1px solid var(--linea)}
-details{border-bottom:1px solid var(--linea)}
-summary{
-  list-style:none;cursor:pointer;padding:24px 40px 24px 0;position:relative;
-  font-size:19px;font-family:"Instrument Serif",serif;
-}
-summary::-webkit-details-marker{display:none}
-summary::after{
-  content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;
-  border-right:1px solid var(--tinta-2);border-bottom:1px solid var(--tinta-2);
-  transform:translateY(-70%) rotate(45deg);transition:transform .2s ease;
-}
-details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
-details .resp{padding:0 0 26px;max-width:68ch;color:var(--tinta-2);font-size:15.5px;margin:0}
-
-/* ── formulario ── */
-#postular{background:var(--papel-2)}
-.form-envoltura{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
-@media (max-width:900px){.form-envoltura{grid-template-columns:1fr;gap:38px}}
-.form-lado h2{font-size:clamp(32px,3.6vw,46px);max-width:14ch}
-.form-lado p{color:var(--tinta-2);font-size:16.5px;margin-top:20px;max-width:40ch}
-.contacto-directo{margin-top:28px;padding-top:24px;border-top:1px solid var(--linea);font-size:14.5px;color:var(--tinta-3)}
-.contacto-directo a{color:var(--laton);font-weight:600;border-bottom:1px solid transparent}
-.contacto-directo a:hover{border-bottom-color:var(--laton)}
-
-.ficha{background:var(--sobre);border:1px solid var(--linea);border-radius:3px;padding:34px 36px;box-shadow:var(--sombra)}
-@media (max-width:640px){.ficha{padding:26px 20px}}
-.campos{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px}
+.ficha-form{background:var(--sobre);border:1px solid var(--linea);border-radius:3px;padding:32px 34px;box-shadow:var(--sombra);max-width:640px}
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:20px 22px}
 .campo{display:flex;flex-direction:column}
 .campo.ancho{grid-column:1/-1}
-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-3);margin-bottom:8px}
-input,select,textarea{
-  font-family:"Archivo",sans-serif;font-size:16px;color:var(--tinta);
-  background:transparent;border:0;border-bottom:1px solid var(--linea-fuerte);
-  padding:9px 0;border-radius:0;width:100%;transition:border-color .18s ease;
-}
-input::placeholder{color:var(--tinta-3)}
+label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-3);margin-bottom:7px}
+input,select,textarea{font-family:"Archivo",sans-serif;font-size:16px;color:var(--tinta);background:transparent;border:0;border-bottom:1px solid var(--linea-fuerte);padding:9px 0;width:100%}
 input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--laton)}
 select{appearance:none;cursor:pointer}
 select option{background:var(--sobre);color:var(--tinta)}
 textarea{min-height:64px;resize:vertical}
-.ficha .btn{width:100%;margin-top:30px;padding:15px}
-.legal{font-size:12.5px;color:var(--tinta-3);margin:16px 0 0;text-align:center}
-@media (max-width:640px){.campos{grid-template-columns:1fr}}
+.ficha-form .btn{width:100%;margin-top:26px;padding:14px}
+@media (max-width:600px){.campos{grid-template-columns:1fr}}
 
-/* ── pie ── */
-footer{background:var(--papel)}
-footer .env{
-  padding-top:38px;padding-bottom:44px;display:flex;flex-wrap:wrap;gap:20px;
-  justify-content:space-between;align-items:center;font-size:13.5px;color:var(--tinta-3);
-}
-footer a:hover{color:var(--tinta)}
+.mensaje{margin-top:18px;padding:14px 16px;border-radius:2px;font-size:14.5px;border:1px solid var(--linea)}
+.mensaje.ok{background:color-mix(in srgb,var(--verde) 12%,var(--sobre));border-color:var(--verde)}
+.mensaje.error{background:color-mix(in srgb,var(--rojo) 10%,var(--sobre));border-color:var(--rojo)}
+.mensaje.espera{color:var(--tinta-3)}
+
+.panel-shell{max-width:760px}
+.panel-cabecera{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;gap:12px;flex-wrap:wrap}
+.panel-cabecera h2{font-size:28px}
+.panel-bloque{background:var(--sobre);border:1px solid var(--linea);border-radius:3px;padding:28px 30px;margin-bottom:22px}
+.panel-bloque h3{font-size:19px;margin-bottom:18px}
+.cupo-pill{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--laton);border:1px solid var(--linea-fuerte);padding:4px 10px;border-radius:2px;margin-bottom:16px}
+.tabla-servicios{width:100%;border-collapse:collapse;margin-bottom:18px}
+.tabla-servicios th{text-align:left;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-3);padding:0 0 10px;border-bottom:1px solid var(--linea);font-weight:600}
+.tabla-servicios td{padding:11px 0;border-bottom:1px solid var(--linea);font-size:15px;vertical-align:top}
+.tabla-servicios td.acciones-servicio{white-space:nowrap;text-align:right}
+.tabla-servicios td.acciones-servicio button{background:none;border:0;color:var(--tinta-3);cursor:pointer;font-size:13px;text-decoration:underline;padding:0 4px}
+.tabla-servicios td.acciones-servicio button:hover{color:var(--tinta)}
+.sin-servicios-panel{color:var(--tinta-3);font-size:14.5px;padding:10px 0}
+.form-servicio{display:grid;grid-template-columns:1.4fr .8fr 2fr auto;gap:12px;align-items:end}
+.form-servicio .campo{margin:0}
+@media (max-width:700px){.form-servicio{grid-template-columns:1fr 1fr}}
+
+.faq{border-top:1px solid var(--linea)}
+details{border-bottom:1px solid var(--linea)}
+summary{list-style:none;cursor:pointer;padding:20px 34px 20px 0;position:relative;font-size:18px;font-family:"Instrument Serif",serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:1px solid var(--tinta-2);border-bottom:1px solid var(--tinta-2);transform:translateY(-70%) rotate(45deg);transition:transform .2s ease}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details .resp{padding:0 0 22px;max-width:66ch;color:var(--tinta-2);font-size:15px;margin:0}
+
+footer .env{padding-top:34px;padding-bottom:38px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--tinta-3)}
+.cargando{font-size:14px;color:var(--tinta-3);padding:20px 0}
 </style>
 </head>
 <body>
 
 <header class="cabecera">
   <div class="env">
-    <a class="marca" href="#">
+    <a class="marca" href="#" data-ir="inicio">
       <span class="sello">10</span>
       <span class="marca-txt"><strong>RED 10</strong><span>La Maná</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#propuesta">La propuesta</a>
-      <a href="#proceso">Cómo opera</a>
-      <a href="#acuerdo">El acuerdo</a>
-      <a href="#preguntas">Preguntas</a>
+      <button data-ir="inicio">Inicio</button>
+      <button data-ir="directorio">Directorio</button>
+      <button data-ir="postular">Postular</button>
+      <button data-ir="panel">Panel de negocio</button>
     </nav>
-    <a class="btn" href="#postular">Postular mi negocio</a>
+    <button class="btn btn-chico" data-ir="postular">Postular mi negocio</button>
   </div>
 </header>
 
-<div class="portada">
-  <div class="env">
-    <div>
-      <span class="rotulo">Convocatoria abierta <span class="sep">/</span> Cupos fundadores</span>
-      <h1>Diez negocios de La Maná, una sola <em>base de clientes</em>.</h1>
-      <p class="entrada">RED 10 agrupa a diez comercios del cantón que no compiten entre sí y que se recomiendan mutuamente. El cliente de cualquiera de ellos obtiene 10% de descuento en los otros nueve.</p>
+<main id="vista-inicio" class="vista activa">
+  <div class="portada">
+    <div class="env">
+      <span class="rotulo">Directorio de negocios · La Maná</span>
+      <h1>Diez negocios, un solo <em>directorio</em>.</h1>
+      <p class="entrada">RED 10 reúne a diez comercios del cantón que se recomiendan entre sí y comparten un mismo directorio público. La postulación se revisa sola: si tu negocio cumple los requisitos, entra directo a la red, sin esperar aprobación de nadie.</p>
       <div class="acciones">
-        <a class="btn" href="#postular">Postular mi negocio</a>
-        <a class="btn btn-linea" href="#propuesta">Conocer la propuesta</a>
-      </div>
-      <p class="pie-portada">Sin cuota durante el piloto de 30 días. Sin comisión por venta. Un solo negocio por rubro.</p>
-    </div>
-
-    <aside class="padron" aria-labelledby="padron-titulo">
-      <div class="padron-cab">
-        <span class="rotulo">Padrón fundador</span>
-        <h3 id="padron-titulo"><span id="contador">9</span> cupos disponibles</h3>
-        <p>La red se cierra al completar los diez comercios.</p>
-      </div>
-      <div id="cupos"></div>
-    </aside>
-  </div>
-</div>
-
-<div class="cifras">
-  <div class="env">
-    <div class="cifra">
-      <span class="n">9×</span>
-      <p>Los puntos de venta que recomiendan tu negocio desde el primer día.</p>
-    </div>
-    <div class="cifra">
-      <span class="n">10%</span>
-      <p>El descuento único que aplicas, solo a clientes referidos por la red.</p>
-    </div>
-    <div class="cifra">
-      <span class="n">30</span>
-      <p>Días de piloto sin costo para medir resultados antes de comprometerte.</p>
-    </div>
-  </div>
-</div>
-
-<section id="propuesta">
-  <div class="env">
-    <div class="cabeza">
-      <div>
-        <span class="rotulo">La propuesta</span>
-        <h2>Tu publicidad llega hasta donde llega tu vitrina.</h2>
-      </div>
-      <p class="bajada">Cada comercio de La Maná paga por separado su rótulo, sus volantes y sus publicaciones, y alcanza únicamente a quienes ya lo conocen. RED 10 concentra ese esfuerzo en diez negocios que comparten clientes en lugar de disputárselos.</p>
-    </div>
-
-    <div class="beneficios">
-      <div class="ben">
-        <span class="num">01</span>
-        <h3>Clientes referidos, no desconocidos</h3>
-        <p>No es publicidad lanzada al aire. Recibes gente que ya confía en otro comercio de la red y que llega recomendada por él, con intención de compra.</p>
-      </div>
-      <div class="ben">
-        <span class="num">02</span>
-        <h3>Presencia en el directorio</h3>
-        <p>Ficha propia con nombre, dirección, horarios, teléfono y fotografías, ubicada en el mapa del cantón y enlazada desde los otros nueve negocios.</p>
-      </div>
-      <div class="ben">
-        <span class="num">03</span>
-        <h3>Publicidad de costo compartido</h3>
-        <p>Una sola campaña financiada entre diez. El contenido, las fotografías y las publicaciones los produce la red; tú no dedicas tiempo a eso.</p>
-      </div>
-      <div class="ben">
-        <span class="num">04</span>
-        <h3>Resultados verificables</h3>
-        <p>Cada canje queda registrado por QR. Al cierre del mes recibes cuántos clientes te derivó la red y desde qué comercio llegaron.</p>
+        <button class="btn" data-ir="postular">Postular mi negocio</button>
+        <button class="btn btn-linea" data-ir="directorio">Ver el directorio</button>
       </div>
     </div>
   </div>
-</section>
-
-<section id="proceso" class="oscura">
-  <div class="env">
-    <div class="cabeza">
-      <div>
-        <span class="rotulo">Cómo opera</span>
-        <h2>Toda la operación cabe en un adhesivo junto a tu caja.</h2>
-      </div>
-      <p class="bajada">Sin sistema que instalar, sin equipos nuevos y sin aplicación que el cliente tenga que descargar.</p>
-    </div>
-    <div class="pasos">
-      <div class="paso">
-        <span class="num">PASO 01</span>
-        <h3>El cliente escanea</h3>
-        <p>Al momento de pagar, escanea el código QR de tu local con la cámara de su celular. No descarga nada ni crea una cuenta.</p>
-      </div>
-      <div class="paso">
-        <span class="num">PASO 02</span>
-        <h3>Recibe su credencial</h3>
-        <p>Se abre su credencial digital con los diez comercios de la red y el beneficio vigente en cada uno. La guarda en su celular.</p>
-      </div>
-      <div class="paso">
-        <span class="num">PASO 03</span>
-        <h3>La usa en la red</h3>
-        <p>La presenta en otro comercio afiliado, el local la escanea y aplica el descuento. El canje queda contabilizado para ambas partes.</p>
-      </div>
+  <div class="cifras">
+    <div class="env">
+      <div class="cifra"><span class="n" id="cifra-ocupados">—</span><p>Negocios activos en la red ahora mismo.</p></div>
+      <div class="cifra"><span class="n" id="cifra-libres">—</span><p>Cupos todavía disponibles.</p></div>
+      <div class="cifra"><span class="n">10%</span><p>Descuento mutuo entre negocios afiliados.</p></div>
     </div>
   </div>
-</section>
 
-<section id="acuerdo">
-  <div class="env">
-    <div class="cabeza">
-      <div>
+  <section>
+    <div class="env">
+      <div class="cabeza">
         <span class="rotulo">El acuerdo</span>
-        <h2>Condiciones idénticas para los diez fundadores.</h2>
+        <h2>Condiciones idénticas para los diez.</h2>
+        <p>Un solo negocio por rubro. Nadie entra solo a recibir.</p>
       </div>
-      <p class="bajada">Ningún comercio entra solo a recibir. Estas son las dos columnas del acuerdo, sin letra chica.</p>
-    </div>
-
-    <div class="acuerdo">
-      <div class="col">
-        <span class="rotulo">Tu aporte</span>
-        <h3>Lo que te comprometes a dar</h3>
-        <ul class="lista">
-          <li><strong>10% de descuento</strong> a todo cliente que presente la credencial de la red.</li>
-          <li><strong>Exhibir el QR</strong> de forma visible en la caja o la entrada del local.</li>
-          <li><strong>Mencionar la red</strong> a tus clientes al momento del cobro.</li>
-          <li><strong>Cuota mensual fija</strong> destinada a publicidad e impresión, únicamente a partir del día 31.</li>
-        </ul>
-      </div>
-      <div class="col">
-        <span class="rotulo">Tu retorno</span>
-        <h3>Lo que recibes a cambio</h3>
-        <ul class="lista">
-          <li><strong>Nueve comercios</strong> recomendando tu negocio a sus propios clientes.</li>
-          <li><strong>Ficha completa</strong> en el directorio, con mapa, horarios y fotografías.</li>
-          <li><strong>Contenido producido</strong> por la red y difundido en sus canales, sin costo adicional.</li>
-          <li><strong>Reporte mensual</strong> de clientes derivados y su comercio de origen.</li>
-          <li><strong>Exclusividad de rubro</strong>: ninguna competencia directa ocupa un cupo mientras seas parte.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="preguntas">
-  <div class="env">
-    <div class="cabeza">
-      <div>
-        <span class="rotulo">Preguntas</span>
-        <h2>Lo que consultan los propietarios.</h2>
-      </div>
-      <p class="bajada">Si algo no está resuelto aquí, escríbenos y lo conversamos en el local.</p>
-    </div>
-    <div class="faq">
-      <details>
-        <summary>¿El 10% no reduce mi margen?</summary>
-        <p class="resp">Lo reduce únicamente sobre ventas que no habrías realizado sin la red. El descuento se aplica solo a quien llega derivado por otro comercio afiliado: sin RED 10, esa transacción no existía. Además, quien usa la credencial la conserva en el celular, lo que favorece la recompra.</p>
-      </details>
-      <details>
-        <summary>¿Puede ingresar mi competencia directa?</summary>
-        <p class="resp">No. Se admite un solo comercio por rubro. Si ingresas como ferretería, ninguna otra ferretería ocupará un cupo mientras permanezcas en la red.</p>
-      </details>
-      <details>
-        <summary>¿Necesito algún sistema o equipo?</summary>
-        <p class="resp">No. Basta con el celular que ya utilizas: escaneas la credencial del cliente con la cámara y el registro se hace solo. El adhesivo con tu código QR lo entrega la red, ya impreso.</p>
-      </details>
-      <details>
-        <summary>¿Cuál es el costo real?</summary>
-        <p class="resp">Los primeros treinta días no tienen costo; es el piloto para verificar si el modelo funciona en La Maná. A partir de ahí se fija una cuota mensual acordada entre los diez fundadores, destinada exclusivamente a publicidad e impresión. No se cobra comisión por venta en ningún caso.</p>
-      </details>
-      <details>
-        <summary>¿Puedo retirarme?</summary>
-        <p class="resp">Sí, notificando con quince días de anticipación. Se retira tu ficha del directorio y tu código deja de generar canjes. No existe cláusula de permanencia.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section id="postular">
-  <div class="env">
-    <div class="form-envoltura">
-      <div class="form-lado">
-        <span class="rotulo">Postulación</span>
-        <h2>Reserva tu cupo de fundador.</h2>
-        <p>Completa la ficha y recibes respuesta por WhatsApp el mismo día. Si tu rubro ya está asignado, te lo informamos de inmediato y no te hacemos esperar.</p>
-        <div class="contacto-directo">
-          ¿Prefieres conversarlo antes?<br>
-          <a href="#" id="wa-directo">Escríbenos directamente por WhatsApp</a>
+      <div class="acuerdo">
+        <div class="col">
+          <h3>Tu aporte</h3>
+          <ul class="lista">
+            <li><strong>10% de descuento</strong> a clientes referidos por otro negocio de la red.</li>
+            <li><strong>Ficha completa y al día</strong>: descripción, horario y servicios reales.</li>
+            <li><strong>Mencionar la red</strong> a tus clientes.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Tu retorno</h3>
+          <ul class="lista">
+            <li><strong>Presencia pública</strong> en el directorio de la red, con tus servicios listados.</li>
+            <li><strong>Exclusividad de rubro</strong>: nadie de tu misma categoría ocupa un cupo mientras estés dentro.</li>
+            <li><strong>Panel propio</strong> para mantener tu ficha actualizada cuando quieras.</li>
+          </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <form class="ficha" id="formulario">
+  <section>
+    <div class="env">
+      <div class="cabeza"><span class="rotulo">Preguntas</span><h2>Lo que consultan los propietarios.</h2></div>
+      <div class="faq">
+        <details>
+          <summary>¿Quién revisa mi postulación?</summary>
+          <p class="resp">Nadie manualmente. El sistema verifica al instante que tu rubro tenga cupo y que completaste los datos obligatorios. Si cumples, quedas dentro de inmediato.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si mi rubro ya está tomado?</summary>
+          <p class="resp">La postulación se rechaza automáticamente en el momento, sin ocupar cupo. Puedes intentar con otro rubro si tu negocio aplica a más de uno.</p>
+        </details>
+        <details>
+          <summary>¿Cómo entro a mi panel después de postular?</summary>
+          <p class="resp">Te llega un correo de Firebase para crear tu contraseña. Con esa contraseña y tu correo entras en "Panel de negocio" cuando quieras, desde cualquier dispositivo.</p>
+        </details>
+        <details>
+          <summary>¿Puedo cambiar mis servicios después?</summary>
+          <p class="resp">Sí, desde tu panel puedes agregar, editar o quitar servicios en cualquier momento; se actualiza en el directorio público de inmediato.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="vista-directorio" class="vista">
+  <section style="border-bottom:0">
+    <div class="env">
+      <div class="cabeza">
+        <span class="rotulo">Directorio público</span>
+        <h2>Negocios activos en RED 10.</h2>
+        <p>Actualizado en tiempo real por cada negocio desde su propio panel.</p>
+      </div>
+      <div class="directorio-lista" id="lista-directorio">
+        <p class="cargando">Cargando directorio…</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="vista-postular" class="vista">
+  <section style="border-bottom:0">
+    <div class="env">
+      <div class="cabeza">
+        <span class="rotulo">Postulación</span>
+        <h2>Postula tu negocio.</h2>
+        <p>El sistema revisa tu rubro y tus datos al instante. Si cumples, entras directo a la red.</p>
+      </div>
+
+      <form class="ficha-form" id="form-postular">
         <div class="campos">
           <div class="campo ancho">
-            <label for="negocio">Nombre del comercio</label>
-            <input id="negocio" name="negocio" required autocomplete="organization" placeholder="Ej. Ferretería El Progreso">
+            <label for="p-negocio">Nombre del comercio</label>
+            <input id="p-negocio" required placeholder="Ej. Ferretería El Progreso">
           </div>
           <div class="campo">
-            <label for="rubro">Rubro</label>
-            <select id="rubro" name="rubro" required>
+            <label for="p-rubro">Rubro</label>
+            <select id="p-rubro" required>
               <option value="">Seleccionar</option>
               <option>Restaurante o comida rápida</option>
               <option>Panadería o pastelería</option>
@@ -502,100 +292,362 @@ footer a:hover{color:var(--tinta)}
               <option>Tecnología y celulares</option>
               <option>Insumos agrícolas</option>
               <option>Hotel u hospedaje</option>
-              <option>Otro</option>
             </select>
           </div>
           <div class="campo">
-            <label for="dueno">Propietario</label>
-            <input id="dueno" name="dueno" required autocomplete="name" placeholder="Nombre y apellido">
+            <label for="p-dueno">Propietario</label>
+            <input id="p-dueno" required placeholder="Nombre y apellido">
           </div>
           <div class="campo">
-            <label for="telefono">WhatsApp</label>
-            <input id="telefono" name="telefono" type="tel" inputmode="tel" required autocomplete="tel" placeholder="09XXXXXXXX">
+            <label for="p-correo">Correo electrónico</label>
+            <input id="p-correo" type="email" required placeholder="tucorreo@ejemplo.com">
           </div>
           <div class="campo">
-            <label for="antiguedad">Años de operación</label>
-            <input id="antiguedad" name="antiguedad" inputmode="numeric" placeholder="Ej. 4">
+            <label for="p-telefono">WhatsApp</label>
+            <input id="p-telefono" inputmode="numeric" required placeholder="09XXXXXXXX">
           </div>
           <div class="campo ancho">
-            <label for="direccion">Dirección del local</label>
-            <input id="direccion" name="direccion" required placeholder="Calle y referencia">
+            <label for="p-direccion">Dirección del local</label>
+            <input id="p-direccion" required placeholder="Calle y referencia">
+          </div>
+          <div class="campo">
+            <label for="p-horario">Horario (opcional)</label>
+            <input id="p-horario" placeholder="Lun-Sáb 08:00-20:00">
           </div>
           <div class="campo ancho">
-            <label for="mensaje">Comentario (opcional)</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Algo que debamos saber de tu negocio"></textarea>
+            <label for="p-descripcion">Descripción breve para el directorio</label>
+            <textarea id="p-descripcion" required placeholder="En pocas líneas, qué ofrece tu negocio"></textarea>
           </div>
         </div>
-        <button class="btn btn-laton" type="submit">Enviar postulación por WhatsApp</button>
-        <p class="legal">Se abrirá WhatsApp con tus datos ya redactados. Solo confirmas el envío.</p>
+        <button class="btn btn-laton" type="submit" id="btn-postular">Enviar postulación</button>
+        <div id="resultado-postulacion"></div>
       </form>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<footer>
-  <div class="env">
-    <span>RED 10 La Maná — Cotopaxi, Ecuador</span>
-    <span><a href="#" id="wa-pie">WhatsApp</a> <span style="opacity:.4;margin:0 8px">·</span> <a href="#postular">Postular</a></span>
-  </div>
-</footer>
+<main id="vista-panel" class="vista">
+  <section style="border-bottom:0">
+    <div class="env panel-shell">
 
+      <div id="panel-login">
+        <div class="cabeza">
+          <span class="rotulo">Panel de negocio</span>
+          <h2>Ingresa a tu cuenta.</h2>
+          <p>Con el correo y la contraseña que definiste desde el enlace que te llegó al aceptarte en la red.</p>
+        </div>
+        <form class="ficha-form" id="form-login" style="max-width:420px">
+          <div class="campos" style="grid-template-columns:1fr">
+            <div class="campo"><label for="l-correo">Correo</label><input id="l-correo" type="email" required></div>
+            <div class="campo"><label for="l-clave">Contraseña</label><input id="l-clave" type="password" required></div>
+          </div>
+          <button class="btn" type="submit">Ingresar</button>
+          <div id="resultado-login"></div>
+        </form>
+      </div>
+
+      <div id="panel-dashboard" class="oculto">
+        <div class="panel-cabecera">
+          <div>
+            <span class="rotulo">Panel de negocio</span>
+            <h2 id="panel-nombre-negocio">—</h2>
+          </div>
+          <button class="btn btn-linea btn-chico" id="btn-salir">Cerrar sesión</button>
+        </div>
+        <span class="cupo-pill" id="panel-cupo-pill">—</span>
+
+        <div class="panel-bloque">
+          <h3>Datos del negocio</h3>
+          <form id="form-editar-negocio">
+            <div class="campos">
+              <div class="campo ancho"><label for="e-descripcion">Descripción</label><textarea id="e-descripcion"></textarea></div>
+              <div class="campo"><label for="e-horario">Horario</label><input id="e-horario"></div>
+              <div class="campo"><label for="e-telefono">WhatsApp</label><input id="e-telefono"></div>
+              <div class="campo ancho"><label for="e-direccion">Dirección</label><input id="e-direccion"></div>
+            </div>
+            <button class="btn" type="submit" style="max-width:220px">Guardar cambios</button>
+            <div id="resultado-editar"></div>
+          </form>
+        </div>
+
+        <div class="panel-bloque">
+          <h3>Tus servicios</h3>
+          <table class="tabla-servicios" id="tabla-servicios">
+            <thead><tr><th>Servicio</th><th>Precio</th><th>Descripción</th><th></th></tr></thead>
+            <tbody id="cuerpo-servicios"></tbody>
+          </table>
+          <p class="sin-servicios-panel oculto" id="sin-servicios-panel">Todavía no agregas servicios.</p>
+
+          <form class="form-servicio" id="form-servicio">
+            <div class="campo"><label for="s-nombre">Servicio</label><input id="s-nombre" required></div>
+            <div class="campo"><label for="s-precio">Precio</label><input id="s-precio" required placeholder="$0.00"></div>
+            <div class="campo"><label for="s-descripcion">Descripción</label><input id="s-descripcion"></div>
+            <button class="btn btn-chico" type="submit" id="btn-servicio">Agregar</button>
+          </form>
+          <div id="resultado-servicio"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="env"><span>RED 10 La Maná — Cotopaxi, Ecuador</span></div></footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
-/* ─────────────────────────────────────────────
-   CONFIGURACIÓN — edita solo estas dos líneas
-   ───────────────────────────────────────────── */
-var WHATSAPP = "593963650750"; // formato internacional, sin + ni espacios
+/* ═══════════════════════════════════════════════════════════
+   PEGA AQUÍ TU firebaseConfig (Firebase console → Configuración
+   del proyecto → Tus apps → objeto de configuración del SDK)
+   ═══════════════════════════════════════════════════════════ */
+const firebaseConfig = {
+  apiKey: "AIzaSyBPhl-FmmBOEuWcF02h5SF5G4oxWOWbna4",
+  authDomain: "face-coffee-bfaab.firebaseapp.com",
+  databaseURL: "https://face-coffee-bfaab-default-rtdb.firebaseio.com",
+  projectId: "face-coffee-bfaab",
+  storageBucket: "face-coffee-bfaab.firebasestorage.app",
+  messagingSenderId: "651317251280",
+  appId: "1:651317251280:web:209383f58a55aa2425e2d5"
+};
+const TOTAL_CUPOS = 10;
 
-var OCUPADOS = [
-  { n: 1, nombre: "Face Coffee", rubro: "Cafetería y bar" }
-];
-/* ───────────────────────────────────────────── */
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-(function padron(){
-  var cont = document.getElementById("cupos"), libres = 0;
-  for (var i = 1; i <= 10; i++){
-    var t = null;
-    for (var j = 0; j < OCUPADOS.length; j++) if (OCUPADOS[j].n === i) t = OCUPADOS[j];
-    var f = document.createElement(t ? "div" : "button");
-    if (!t) f.type = "button";
-    f.className = "fila " + (t ? "ocup" : "disp");
-    var idx = (i < 10 ? "0" : "") + i;
-    if (t){
-      f.innerHTML = '<span class="idx">' + idx + '</span>' +
-        '<span><span class="nom">' + t.nombre + '</span><span class="sub">' + t.rubro + '</span></span>' +
-        '<span class="estado ocupado">Fundador</span>';
-    } else {
-      libres++;
-      f.innerHTML = '<span class="idx">' + idx + '</span>' +
-        '<span><span class="nom">Cupo disponible</span><span class="sub">Rubro por asignar</span></span>' +
-        '<span class="estado libre">Postular</span>';
-      f.addEventListener("click", function(){
-        document.getElementById("postular").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function(){ document.getElementById("negocio").focus({ preventScroll: true }); }, 620);
-      });
-    }
-    cont.appendChild(f);
+function irA(id){
+  document.querySelectorAll(".vista").forEach(v => v.classList.remove("activa"));
+  document.getElementById("vista-" + id).classList.add("activa");
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll("[data-ir]").forEach(el => {
+  el.addEventListener("click", e => { e.preventDefault(); irA(el.dataset.ir); });
+});
+
+async function asegurarSemilla(){
+  const metaRef = db.collection("red10_meta").doc("estado");
+  const metaSnap = await metaRef.get();
+  if (!metaSnap.exists){
+    await metaRef.set({ cuposUsados: 1, rubros: { "Cafetería y bar": true } });
   }
-  document.getElementById("contador").textContent = libres;
-})();
+  const founderRef = db.collection("red10_negocios").doc("founder-1");
+  const founderSnap = await founderRef.get();
+  if (!founderSnap.exists){
+    await founderRef.set({
+      nombre: "Face Coffee", rubro: "Cafetería y bar", numero: 1, estado: "aceptado",
+      uid: null, descripcion: "Cafetería y bar en el centro de La Maná.",
+      direccion: "Calle General Enrique Gallo, La Maná", telefono: "0963650750",
+      horario: "", servicios: [], fecha: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  }
+}
+asegurarSemilla().catch(err => console.error("Semilla:", err));
 
-var enlaceWA = "https://wa.me/" + WHATSAPP;
-document.getElementById("wa-directo").href = enlaceWA;
-document.getElementById("wa-pie").href = enlaceWA;
+db.collection("red10_negocios").where("estado", "==", "aceptado")
+  .onSnapshot(qs => {
+    const negocios = [];
+    qs.forEach(doc => negocios.push({ id: doc.id, ...doc.data() }));
+    negocios.sort((a,b) => (a.numero||99) - (b.numero||99));
 
-document.getElementById("formulario").addEventListener("submit", function(e){
+    document.getElementById("cifra-ocupados").textContent = negocios.length;
+    document.getElementById("cifra-libres").textContent = Math.max(TOTAL_CUPOS - negocios.length, 0);
+
+    const cont = document.getElementById("lista-directorio");
+    if (negocios.length === 0){
+      cont.innerHTML = '<p class="vacio-directorio">Todavía no hay negocios activos.</p>';
+      return;
+    }
+    cont.innerHTML = negocios.map(n => {
+      const servicios = (n.servicios || []);
+      const listaServicios = servicios.length
+        ? '<ul class="servicios-mini">' + servicios.map(s =>
+            `<li><span>${escapeHtml(s.nombre)}${s.descripcion ? " — " + escapeHtml(s.descripcion) : ""}</span><span class="precio">${escapeHtml(s.precio)}</span></li>`
+          ).join("") + '</ul>'
+        : '<p class="sin-servicios">Aún sin servicios cargados.</p>';
+      return `<article class="ficha-negocio">
+        <div class="top"><h3>${escapeHtml(n.nombre)}</h3><span class="rubro-tag">${escapeHtml(n.rubro)}</span></div>
+        <p class="datos">${escapeHtml(n.direccion || "")}${n.horario ? " · " + escapeHtml(n.horario) : ""}</p>
+        <p class="desc">${escapeHtml(n.descripcion || "")}</p>
+        ${listaServicios}
+      </article>`;
+    }).join("");
+  }, err => console.error("Directorio:", err));
+
+function escapeHtml(str){
+  return String(str == null ? "" : str).replace(/[&<>"']/g, m => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[m]));
+}
+
+document.getElementById("form-postular").addEventListener("submit", async (e) => {
   e.preventDefault();
-  var d = new FormData(e.target);
-  var t =
-    "Postulación a RED 10 La Maná\n\n" +
-    "Comercio: " + d.get("negocio") + "\n" +
-    "Rubro: " + d.get("rubro") + "\n" +
-    "Propietario: " + d.get("dueno") + "\n" +
-    "WhatsApp: " + d.get("telefono") + "\n" +
-    (d.get("antiguedad") ? "Años de operación: " + d.get("antiguedad") + "\n" : "") +
-    "Dirección: " + d.get("direccion") +
-    (d.get("mensaje") ? "\n\nComentario: " + d.get("mensaje") : "");
-  window.open(enlaceWA + "?text=" + encodeURIComponent(t), "_blank");
+  const btn = document.getElementById("btn-postular");
+  const salida = document.getElementById("resultado-postulacion");
+  const val = id => document.getElementById(id).value.trim();
+
+  const datos = {
+    nombre: val("p-negocio"), rubro: val("p-rubro"), propietario: val("p-dueno"),
+    correo: val("p-correo"), telefono: val("p-telefono"), direccion: val("p-direccion"),
+    horario: val("p-horario"), descripcion: val("p-descripcion")
+  };
+
+  if (!/^09\d{8}$/.test(datos.telefono)){
+    salida.innerHTML = '<div class="mensaje error">El WhatsApp debe tener 10 dígitos y empezar en 09.</div>';
+    return;
+  }
+
+  btn.disabled = true;
+  salida.innerHTML = '<div class="mensaje espera">Verificando disponibilidad de tu rubro…</div>';
+
+  try{
+    const metaRef = db.collection("red10_meta").doc("estado");
+    const numeroAsignado = await db.runTransaction(async (tx) => {
+      const metaSnap = await tx.get(metaRef);
+      const meta = metaSnap.data() || { cuposUsados: 0, rubros: {} };
+      if (meta.rubros && meta.rubros[datos.rubro]){
+        throw new Error("RUBRO_TOMADO");
+      }
+      if ((meta.cuposUsados || 0) >= TOTAL_CUPOS){
+        throw new Error("RED_COMPLETA");
+      }
+      const numero = (meta.cuposUsados || 0) + 1;
+      const nuevosRubros = Object.assign({}, meta.rubros, { [datos.rubro]: true });
+      tx.set(metaRef, { cuposUsados: numero, rubros: nuevosRubros }, { merge: true });
+      return numero;
+    });
+
+    const cred = await auth.createUserWithEmailAndPassword(datos.correo, "R10-" + Math.random().toString(36).slice(2, 10));
+    await db.collection("red10_negocios").doc(cred.user.uid).set({
+      nombre: datos.nombre, rubro: datos.rubro, propietario: datos.propietario,
+      correo: datos.correo, telefono: datos.telefono, direccion: datos.direccion,
+      horario: datos.horario, descripcion: datos.descripcion,
+      numero: numeroAsignado, estado: "aceptado", uid: cred.user.uid, servicios: [],
+      fecha: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    await auth.sendPasswordResetEmail(datos.correo);
+    await auth.signOut();
+
+    salida.innerHTML = `<div class="mensaje ok"><strong>Aceptado — cupo #${numeroAsignado} de ${TOTAL_CUPOS}.</strong><br>
+      Ya apareces en el directorio. Revisa <strong>${escapeHtml(datos.correo)}</strong>: te enviamos un enlace para crear tu contraseña y entrar a tu panel.</div>`;
+    e.target.reset();
+  } catch(err){
+    if (err.message === "RUBRO_TOMADO"){
+      salida.innerHTML = '<div class="mensaje error">Ese rubro ya está ocupado por otro negocio de la red. Elige otro rubro si aplica.</div>';
+    } else if (err.message === "RED_COMPLETA"){
+      salida.innerHTML = '<div class="mensaje error">La red ya completó sus diez cupos.</div>';
+    } else if (err.code === "auth/email-already-in-use"){
+      salida.innerHTML = '<div class="mensaje error">Ese correo ya está registrado en la red. Entra desde "Panel de negocio".</div>';
+    } else {
+      console.error(err);
+      salida.innerHTML = '<div class="mensaje error">No se pudo procesar la postulación. Intenta de nuevo.</div>';
+    }
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+document.getElementById("form-login").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const salida = document.getElementById("resultado-login");
+  const correo = document.getElementById("l-correo").value.trim();
+  const clave = document.getElementById("l-clave").value;
+  salida.innerHTML = "";
+  try{
+    await auth.signInWithEmailAndPassword(correo, clave);
+  } catch(err){
+    salida.innerHTML = '<div class="mensaje error">Correo o contraseña incorrectos.</div>';
+  }
+});
+
+document.getElementById("btn-salir").addEventListener("click", () => auth.signOut());
+
+let negocioActualRef = null;
+auth.onAuthStateChanged(async (user) => {
+  if (!user){
+    document.getElementById("panel-login").classList.remove("oculto");
+    document.getElementById("panel-dashboard").classList.add("oculto");
+    negocioActualRef = null;
+    return;
+  }
+  negocioActualRef = db.collection("red10_negocios").doc(user.uid);
+  const snap = await negocioActualRef.get();
+  if (!snap.exists){
+    document.getElementById("resultado-login").innerHTML = '<div class="mensaje error">No encontramos un negocio asociado a esta cuenta.</div>';
+    auth.signOut();
+    return;
+  }
+  document.getElementById("panel-login").classList.add("oculto");
+  document.getElementById("panel-dashboard").classList.remove("oculto");
+  cargarPanel(snap.data());
+});
+
+function cargarPanel(n){
+  document.getElementById("panel-nombre-negocio").textContent = n.nombre;
+  document.getElementById("panel-cupo-pill").textContent = "Cupo #" + n.numero + " · " + n.rubro;
+  document.getElementById("e-descripcion").value = n.descripcion || "";
+  document.getElementById("e-horario").value = n.horario || "";
+  document.getElementById("e-telefono").value = n.telefono || "";
+  document.getElementById("e-direccion").value = n.direccion || "";
+  pintarServicios(n.servicios || []);
+}
+
+document.getElementById("form-editar-negocio").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const salida = document.getElementById("resultado-editar");
+  try{
+    await negocioActualRef.update({
+      descripcion: document.getElementById("e-descripcion").value.trim(),
+      horario: document.getElementById("e-horario").value.trim(),
+      telefono: document.getElementById("e-telefono").value.trim(),
+      direccion: document.getElementById("e-direccion").value.trim()
+    });
+    salida.innerHTML = '<div class="mensaje ok">Cambios guardados.</div>';
+  } catch(err){
+    salida.innerHTML = '<div class="mensaje error">No se pudo guardar. Intenta de nuevo.</div>';
+  }
+});
+
+function pintarServicios(servicios){
+  const cuerpo = document.getElementById("cuerpo-servicios");
+  const vacio = document.getElementById("sin-servicios-panel");
+  if (!servicios.length){
+    cuerpo.innerHTML = "";
+    vacio.classList.remove("oculto");
+    return;
+  }
+  vacio.classList.add("oculto");
+  cuerpo.innerHTML = servicios.map((s, i) =>
+    "<tr><td>" + escapeHtml(s.nombre) + "</td><td>" + escapeHtml(s.precio) + "</td><td>" +
+    escapeHtml(s.descripcion || "") + "</td><td class=\"acciones-servicio\"><button type=\"button\" data-quitar=\"" + i + "\">Quitar</button></td></tr>"
+  ).join("");
+  cuerpo.querySelectorAll("[data-quitar]").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const idx = Number(btn.dataset.quitar);
+      const snap = await negocioActualRef.get();
+      const servicios = (snap.data().servicios || []).slice();
+      servicios.splice(idx, 1);
+      await negocioActualRef.update({ servicios });
+      pintarServicios(servicios);
+    });
+  });
+}
+
+document.getElementById("form-servicio").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const salida = document.getElementById("resultado-servicio");
+  const nombre = document.getElementById("s-nombre").value.trim();
+  const precio = document.getElementById("s-precio").value.trim();
+  const descripcion = document.getElementById("s-descripcion").value.trim();
+  if (!nombre || !precio) return;
+  try{
+    const snap = await negocioActualRef.get();
+    const servicios = (snap.data().servicios || []).concat([{ nombre, precio, descripcion }]);
+    await negocioActualRef.update({ servicios });
+    pintarServicios(servicios);
+    e.target.reset();
+    salida.innerHTML = "";
+  } catch(err){
+    salida.innerHTML = '<div class="mensaje error">No se pudo agregar el servicio.</div>';
+  }
 });
 </script>
 </body>
